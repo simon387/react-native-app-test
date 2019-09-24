@@ -2,13 +2,24 @@ import React from 'react';
 import {
 	View,
 	Text,
+	Button,
 	StyleSheet,
 } from 'react-native';
+
+import language from '../constants/language';
 
 const HomePageScreen = props => {
 	return (
 		<View style={styles.screen}>
-			<Text>The HomePage Screen!</Text>
+			<Text>Hola!</Text>
+			<Button
+				title={language.startButton}
+				onPress={() => {
+					props.navigation.navigate({
+						routeName: 'Presentation'
+					});
+				}}
+			/>
 		</View>
 	);
 };
