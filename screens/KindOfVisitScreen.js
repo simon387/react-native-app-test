@@ -6,15 +6,18 @@ import {
 	FlatList,
 	TouchableOpacity,
 } from 'react-native';
+import KindOfVisitTile from '../components/KindOfVisitTile';
 
 import { KIND_OF_VISITS } from '../data/dummy-data';
+import Colors from '../constants/Colors';
 
 const KindOfVisitScreen = props => {
 	const renderGridItem = (itemData) => {
 		return (
-			<TouchableOpacity 
-				style={styles.gridItem}
-				onPress={() => {
+			<KindOfVisitTile
+				title={itemData.item.title}
+				color={'#9a4bfa'}
+				onSelect={() => {
 					props.navigation.navigate({
 						routeName: 'VisitDetail',
 						params: {
@@ -22,10 +25,7 @@ const KindOfVisitScreen = props => {
 						}
 					})
 				}}>
-				<View>
-					<Text>{itemData.item.title}</Text>
-				</View>
-			</TouchableOpacity>
+			</KindOfVisitTile>
 		);
 	};
 
@@ -46,11 +46,6 @@ const styles = StyleSheet.create({
 		flex: 1,
 		justifyContent: 'center',
 		alignItems: 'center',
-	},
-	gridItem: {
-		flex: 1,
-		margin: 15,
-		height: '10%',
 	},
 });
 
