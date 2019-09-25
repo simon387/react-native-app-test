@@ -8,13 +8,52 @@ import VisitDetailScreen from '../screens/VisitDetailScreen';
 import ContractScreen from '../screens/ContractScreen';
 import GameOverScreen from '../screens/GameOverScreen';
 
+import Colors from '../constants/Colors';
+
 const ConfigNavigator = createStackNavigator({
-	HomePage: HomePageScreen,
-	Presentation: PresentationScreen,
-	KindOfVisit: KindOfVisitScreen,
-	VisitDetail: VisitDetailScreen,
-	Contract: ContractScreen,
-	GameOver: GameOverScreen,
+	HomePage: {
+		screen: HomePageScreen,
+		navigationOptions: {
+			headerTitle: 'Home'
+		}
+	},
+	Presentation: {
+		screen: PresentationScreen,
+		navigationOptions: {
+			headerTitle: 'Your Name'
+		}
+	},
+	KindOfVisit: {
+		screen: KindOfVisitScreen,
+		navigationOptions: {
+			headerTitle: 'Kind of Visit'
+		}
+	},
+	VisitDetail: {
+		screen: VisitDetailScreen,
+		navigationOptions: {
+			
+		}
+	},
+	Contract: {
+		screen: ContractScreen,
+		navigationOptions: {
+			headerTitle: ''
+		}
+	},
+	GameOver: {
+		screen: GameOverScreen,
+		navigationOptions: {
+			headerTitle: ''
+		}
+	},
+}, {
+	defaultNavigationOptions: {
+		headerStyle: {
+			backgroundColor: Colors.primaryColor,
+		},
+		headerTintColor: 'white',
+	}
 });
 
 export default createAppContainer(ConfigNavigator);
